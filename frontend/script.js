@@ -6,17 +6,17 @@ async function buscarProduto() {
     const resposta = await fetch(url);
     const produto = await resposta.json();
 
+produto.forEach(item => {
     const card = `
         <div class="card">
-            <h2>${produto.nome}</h2>
-            <p>Categoria: ${produto.categoria}</p>
-            <p class="preco">Preço: R$ ${produto.preco}</p>
+            <h2>${item.nome}</h2>
+            <p>Categoria: ${item.categoria}</p>
+            <p class="preco">R$ ${item.preco}</p>
         </div>
     `;
 
-    listaProdutos.innerHTML = card;
-}
-
+    listaProdutos.innerHTML += card;
+})};
 function carregarDados() {
     buscarProduto();
 }
