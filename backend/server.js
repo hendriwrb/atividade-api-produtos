@@ -11,9 +11,9 @@ app.use(express.static("../frontend", { index: "index.html" }));
 app.get("/produto", (req, res) => {
     const produto = {
         id: 1,
-        nome: "Geladeira",
-        preco: 2500,
-        categoria: "Eletronicos"
+        nome: "Melancia",
+        preco: 23,
+        categoria: "Alimento"
     };
 
     res.json(produto);
