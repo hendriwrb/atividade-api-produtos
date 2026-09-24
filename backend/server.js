@@ -14,14 +14,21 @@ app.get("/produto", (req, res) => {
         id: 1,
         nome: "Melancia",
         preco: 23,
-        categoria: "Alimento"
+        categoria: "Alimento",
         },
         {
         id: 2,
         nome: "Amaciante downy",
         preco: 27,
-        categoria: 'Produto de limpeza'
-        }];
+        categoria: 'Produto de limpeza',
+        },
+        {
+         id: 3,
+         nome: "Ps5",
+         preco: 4700,
+         categoria: "eletronico",
+        }
+        ];
 
     res.json(produto);
 });

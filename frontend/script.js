@@ -2,22 +2,32 @@ const listaProdutos = document.getElementById("lista-produtos");
 
 const url = "/produto";
 
-async function buscarProduto() {
+async function buscarProduto(){
     const resposta = await fetch(url);
     const produto = await resposta.json();
 
-produto.forEach(item => {
-    const card = `
-        <div class="card">
-            <h2>${item.nome}</h2>
-            <p>Categoria: ${item.categoria}</p>
-            <p class="preco">R$ ${item.preco}</p>
-        </div>
+const imagens = [
+    "imagens/melancia.jpg",
+    "imagens/downy.jpg",
+    "imagens/ps5.jpg"
+];
+
+produto.forEach((item, index) => {
+
+const card = `
+    <div class="card">
+        <img src="${imagens[index]}" alt="${item.nome}">
+        <h2>${item.nome}</h2>
+        <p>${item.categoria}</p>
+        <p class="preco">R$ ${item.preco}</p>
+    </div>
+
     `;
 
     listaProdutos.innerHTML += card;
-})};
-function carregarDados() {
+})};    
+
+function carregarDados(){
     buscarProduto();
 }
 
